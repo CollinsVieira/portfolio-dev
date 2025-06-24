@@ -1,0 +1,86 @@
+---
+import Django from "../icons/Django.astro";
+import React from "../icons/React.astro";
+import Html from "../icons/Html.astro";
+import Css from "../icons/Css.astro";
+import Javascript from "../icons/Javascript.astro";
+import Php from "../icons/PHP.astro";
+import Mysql from "../icons/MySQL.astro";
+import WordPress from "../icons/Wordpress.astro";
+import PostGreSQL from "../icons/Postgres.astro";
+const PROJECTS = [
+    {
+        title: "IFCET - Sistema de Gestión de Estudiantes",
+        description:
+            "Proyecto para la gestión de estudiantes de la empresa IFCET. Módulos de Registros, Reportes, Usuarios, etc.",
+        link: "#",
+        image: "./src/assets/ifcet.webp",
+        github: "",
+        tags: ["React", "Django", "PostGreSQL"],
+    },
+    {
+        title: "IFCET - Sitio Web",
+        description: "Sitio web de la empresa IFCET.",
+        link: "#",
+        image: "./src/assets/ifcet-aula.webp",
+        github: "",
+        tags: ["HTML", "CSS", "JavaScript", "WordPress"],
+    },
+    {
+        title: "IFCET - Aula Virtual",
+        description: "Aula Virtual para los estudiantes de IFCET",
+        link: "#",
+        image: "./src/assets/ifcet-web.webp",
+        github: "",
+        tags: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
+    },
+];
+
+const ICONS = {
+  Django,
+  React,
+  HTML: Html,
+  CSS: Css,
+  JavaScript: Javascript,
+  PHP: Php,
+  MySQL: Mysql,
+  WordPress: WordPress,
+  PostGreSQL: PostGreSQL,
+};
+---
+
+{
+    PROJECTS.map((project) => (
+        <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0 mb-10">
+            <div class="flex flex-col w-full md:w-1/2">
+                <h3 class="text-white text-2xl font-bold">{project.title}</h3>
+                <p class="text-white">{project.description}</p>
+                <div class="flex flex-wrap gap-2 mt-4">
+                    {project.tags.map((tag) => {
+                        const Icon = ICONS[tag as keyof typeof ICONS];
+                        return (
+                            <span class="text-sm  px-2 py-1 bg-[#1a1a1a] shadow-xl rounded-md flex items-center gap-2 
+                                hover:bg-[#2a2a2a] hover:scale-110 hover:cursor-pointer transition-all duration-300">
+                                {Icon ? <Icon class="size-7" /> : null}
+                                {tag}
+                            </span>
+                        );
+                    })}
+                </div>
+            </div>
+            <div class="w-full md:w-1/2">
+                <div
+                    class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 
+                    ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 
+                    md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50"
+                >
+                    <img
+                        src={project.image}
+                        alt={project.title}
+                        class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                    />
+                </div>
+            </div>
+        </article>
+    ))
+}

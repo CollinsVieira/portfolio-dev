@@ -1,0 +1,25 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCE_ITEMS = [
+    {
+        title: "Líder de TI",
+        description: "Líder del área de TI de la empresa IFCET",
+        date: "Desde 2022 hasta la actualidad",
+    },
+    {
+        title: "Líder de TI",
+        description: "Líder del área de TI de la empresa IFCET",
+        date: "Desde 2022 hasta la actualidad",
+    },
+    
+]
+---
+
+<ol class="items-center sm:flex lg:">
+    {EXPERIENCE_ITEMS.map((item) => (
+        <li class="relative mb-6 sm:mb-0 text-pretty">
+            <ExperienceItem {...item} />
+        </li>
+    ))}
+</ol>
+

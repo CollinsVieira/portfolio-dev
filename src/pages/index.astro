@@ -1,11 +1,68 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Badge from "../components/Badge.astro";
+import Layout from "../layouts/Layout.astro";
+import Github from "../icons/Github.astro";
+import LinkedIn from "../icons/LinkedIn.astro";
+import SocialPill from "../components/SocialPill.astro";
+import Instagram from "../icons/Instagram.astro";
+import Experience from "../components/Experience.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Briefcase from "../icons/Briefcase.astro";
+import Code from "../icons/Code.astro";
+import Projects from "../components/Projects.astro";
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+    title="Porfolio | Collins Vieira"
+    description="Portfolio de Collins Vieira, desarrollador y programador fullstack con 2 años de experiencia. De Chiclayo, Perú."
+>
+    <main class="px-4">
+        <SectionContainer id="home" class="py-16 lg:py-44 pb-26 sm:pb-10">
+            <h1 class="text-3xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6">
+                Hola, soy Collins Vieira
+            </h1>
+            <h2 class="text-white text-base lg:text-xl text-pretty">
+                Ingeniero de Sistemas especializado en desarrollo web Full Stack con 2 años de experiencia diseñando, desarrollando e implementando soluciones escalables y eficientes.
+            </h2>
+            <h2 class="text-white text-sm lg:text-[14px]">De Chiclayo, Perú.</h2>
+            <div class="flex items-center pt-4">
+                <Badge>Open to work!</Badge>
+            </div>
+
+            <nav class="flex gap-x-4 flex-wrap">
+                <SocialPill href="https://github.com/CollinsVieira">
+                    <Github class="size-6" />
+                    Github
+                </SocialPill>
+                <SocialPill href="https://www.linkedin.com/in/collinsvieira/">
+                    <LinkedIn class="size-6" />
+                    LinkedIn
+                </SocialPill>
+                <SocialPill href="https://www.instagram.com/collins_ll/">
+                    <Instagram class="size-6" />
+                    Instagram
+                </SocialPill>
+            </nav>
+        </SectionContainer>
+        <SectionContainer id="experience">
+            <h2
+                class="text-white text-2xl font-bold mb-6 flex items-center gap-x-2"
+            >
+                <Briefcase class="size-6" />
+                Experiencia Laboral
+            </h2>
+            <Experience />
+        </SectionContainer>
+        <SectionContainer id="projects" class="pt-22">
+            <h2
+                class="text-white text-2xl font-bold mb-6 flex items-center gap-x-2"
+            >
+                <Code class="size-6" />
+                Proyectos
+            </h2>
+        </SectionContainer>
+        <SectionContainer class="pb-22">
+            <Projects />
+        </SectionContainer>
+    </main>
 </Layout>
