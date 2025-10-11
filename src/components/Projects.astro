@@ -8,31 +8,48 @@ import Php from "../icons/PHP.astro";
 import Mysql from "../icons/MySQL.astro";
 import WordPress from "../icons/Wordpress.astro";
 import PostGreSQL from "../icons/Postgres.astro";
+import AstroIcon from "../icons/AstroIcon.astro";
+import TailwindCss from "../icons/TailwindCss.astro";
+import TypeScript from "../icons/TypeScript.astro";
+import srcImage from "../assets/ifcet.webp"
+import srcImage2 from "../assets/ifcet-aula.webp"
+import srcImage3 from "../assets/ifcet-web.webp"
+import srcImage4 from "../assets/img4.png"
+import { Image } from "astro:assets";
+
 const PROJECTS = [
     {
         title: "IFCET - Sistema de Gestión de Estudiantes",
         description:
             "Proyecto para la gestión de estudiantes de la empresa IFCET. Módulos de Registros, Reportes, Usuarios, etc.",
         link: "#",
-        image: "./src/assets/ifcet.webp",
+        image: srcImage,
         github: "",
         tags: ["React", "Django", "PostGreSQL"],
     },
     {
         title: "IFCET - Sitio Web",
-        description: "Sitio web de la empresa IFCET.",
+        description: "Sitio web de la empresa IFCET. Aumentó las ventas en un 20% en su totalidad.",
         link: "#",
-        image: "./src/assets/ifcet-aula.webp",
+        image: srcImage2,
         github: "",
         tags: ["HTML", "CSS", "JavaScript", "WordPress"],
     },
     {
         title: "IFCET - Aula Virtual",
-        description: "Aula Virtual para los estudiantes de IFCET",
+        description: "Aula Virtual para los estudiantes de IFCET.",
         link: "#",
-        image: "./src/assets/ifcet-web.webp",
+        image: srcImage3,
         github: "",
         tags: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
+    },
+    {
+        title: "IFCET - Sitio web",
+        description: "Migración del sitio web de IFCET nuevas tecnologías con Astro, React y Django como backend.",
+        link: "https://ifcet.com.pe/",
+        image: srcImage4,
+        github: "",
+        tags: ["React", "Astro", "Tailwind CSS","TypeScript","Django","PostGreSQL"],
     },
 ];
 
@@ -46,6 +63,9 @@ const ICONS = {
   MySQL: Mysql,
   WordPress: WordPress,
   PostGreSQL: PostGreSQL,
+  Astro: AstroIcon,
+  TailwindCss: TailwindCss,
+  TypeScript: TypeScript,
 };
 ---
 
@@ -74,11 +94,7 @@ const ICONS = {
                     ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 
                     md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50"
                 >
-                    <img
-                        src={project.image}
-                        alt={project.title}
-                        class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-                    />
+                    <Image src={project.image} alt={project.title} class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" />
                 </div>
             </div>
         </article>
