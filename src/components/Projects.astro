@@ -15,6 +15,8 @@ import srcImage from "../assets/ifcet.webp"
 import srcImage2 from "../assets/ifcet-aula.webp"
 import srcImage3 from "../assets/ifcet-web.webp"
 import srcImage4 from "../assets/img4.png"
+import srcImage5 from "../assets/img5.png"
+import Docker from "../icons/Docker.astro";
 import { Image } from "astro:assets";
 
 const PROJECTS = [
@@ -51,6 +53,14 @@ const PROJECTS = [
         github: "",
         tags: ["React", "Astro", "Tailwind CSS","TypeScript","Django","PostGreSQL"],
     },
+    {
+        title: "Serfer & Asociados - Sistema personalizado para Control y Venta de Lotes e Imobiliaria",
+        description: "Sistema para Control y Venta de Lotes e Imobiliaria personalizado para la empresa Serfer & Asociados.",
+        link: "",
+        image: srcImage5,
+        github: "",
+        tags: ["React", "Tailwind CSS","TypeScript","Django","PostGreSQL","Docker"],
+    }
 ];
 
 const ICONS = {
@@ -66,6 +76,7 @@ const ICONS = {
   Astro: AstroIcon,
   TailwindCss: TailwindCss,
   TypeScript: TypeScript,
+  Docker: Docker,
 };
 ---
 
