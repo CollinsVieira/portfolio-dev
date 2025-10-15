@@ -10,103 +10,76 @@ import SectionContainer from "../components/SectionContainer.astro";
 import Briefcase from "../icons/Briefcase.astro";
 import Code from "../icons/Code.astro";
 import Projects from "../components/Projects.astro";
+import Shuffle from "../utils/Shuffle.jsx";
+import Tecnologias from "../components/Tecnologias.jsx";
 ---
 
 <Layout
-    title="Porfolio | Collins Vieira"
-    description="Portfolio de Collins Vieira, desarrollador y programador fullstack con 2 años de experiencia. De Chiclayo, Perú."
+  title="Porfolio | Collins Vieira"
+  description="Portfolio de Collins Vieira, desarrollador y programador fullstack con 2 años de experiencia. De Chiclayo, Perú."
 >
-    <main class="px-4">
-        <SectionContainer id="home" class="py-16 lg:py-44 pb-26 sm:pb-10">
-            <h1 class="text-3xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6">
-                Hola, soy Collins Vieira
-            </h1>
-            <h2 class="text-white text-base lg:text-xl text-pretty">
-                Ingeniero de Sistemas especializado en desarrollo web Full Stack con 2 años de experiencia diseñando, desarrollando e implementando soluciones escalables y eficientes.
-            </h2>
-            <h2 class="text-white text-sm lg:text-[14px]">De Chiclayo, Perú.</h2>
-            <div class="flex items-center pt-4">
-                <Badge>Open to work!</Badge>
-            </div>
+  <main class="px-4">
+    <SectionContainer id="home" class="py-16 lg:py-44 pb-12 sm:pb-5">
+      <Shuffle
+        text="Hola, soy Collins Vieira"
+        shuffleDirection="right"
+        duration={0.35}
+        animationMode="evenodd"
+        shuffleTimes={1}
+        ease="power3.out"
+        stagger={0.03}
+        threshold={0.1}
+        triggerOnce={true}
+        triggerOnHover={true}
+        respectReducedMotion={true}
+        onShuffleComplete={undefined}
+        colorFrom={undefined}
+        colorTo={undefined}
+        client:load
+      />
+      <h2 class="text-white text-base lg:text-xl text-pretty" id="description">
+        Ingeniero de Sistemas especializado en desarrollo web Full Stack con 2
+        años de experiencia diseñando, desarrollando e implementando soluciones
+        escalables y eficientes.
+      </h2>
+      <h2 class="text-white text-sm lg:text-[14px]">De Chiclayo, Perú.</h2>
+      <div class="flex items-center pt-4">
+        <Badge>Open to work!</Badge>
+      </div>
 
-            <nav class="flex gap-x-4 flex-wrap">
-                <SocialPill href="https://github.com/CollinsVieira">
-                    <Github class="size-6" />
-                    Github
-                </SocialPill>
-                <SocialPill href="https://www.linkedin.com/in/collinsvieira/">
-                    <LinkedIn class="size-6" />
-                    LinkedIn
-                </SocialPill>
-            </nav>
-        </SectionContainer>
-        <SectionContainer class="pb-22">
-            <h2
-            class="text-white text-2xl font-bold mb-6 flex items-center gap-x-2"
-        >
-            <Code class="size-6" />
-            Tecnologías
-            </h2>
-            <div class="flex flex-wrap gap-2">
-                <span class="text-sm  px-2 py-1 bg-[#1a1a1a] shadow-xl rounded-md flex items-center gap-2 
-                    hover:bg-[#2a2a2a] hover:scale-110 hover:cursor-pointer transition-all duration-300">
-                    React
-                </span>
-                <span class="text-sm  px-2 py-1 bg-[#1a1a1a] shadow-xl rounded-md flex items-center gap-2 
-                    hover:bg-[#2a2a2a] hover:scale-110 hover:cursor-pointer transition-all duration-300">
-                    Astro
-                </span>
-                <span class="text-sm  px-2 py-1 bg-[#1a1a1a] shadow-xl rounded-md flex items-center gap-2 
-                    hover:bg-[#2a2a2a] hover:scale-110 hover:cursor-pointer transition-all duration-300">
-                    Tailwind CSS
-                </span>
-                <span class="text-sm  px-2 py-1 bg-[#1a1a1a] shadow-xl rounded-md flex items-center gap-2 
-                    hover:bg-[#2a2a2a] hover:scale-110 hover:cursor-pointer transition-all duration-300">
-                    TypeScript
-                </span>
-                <span class="text-sm  px-2 py-1 bg-[#1a1a1a] shadow-xl rounded-md flex items-center gap-2 
-                    hover:bg-[#2a2a2a] hover:scale-110 hover:cursor-pointer transition-all duration-300">
-                    Django
-                </span>
-                <span class="text-sm  px-2 py-1 bg-[#1a1a1a] shadow-xl rounded-md flex items-center gap-2 
-                    hover:bg-[#2a2a2a] hover:scale-110 hover:cursor-pointer transition-all duration-300">
-                    Docker
-                </span>
-                <span class="text-sm  px-2 py-1 bg-[#1a1a1a] shadow-xl rounded-md flex items-center gap-2 
-                    hover:bg-[#2a2a2a] hover:scale-110 hover:cursor-pointer transition-all duration-300">
-                    Git
-                </span>
-                <span class="text-sm  px-2 py-1 bg-[#1a1a1a] shadow-xl rounded-md flex items-center gap-2 
-                    hover:bg-[#2a2a2a] hover:scale-110 hover:cursor-pointer transition-all duration-300">
-                    PostgreSQL
-                </span>
-                <span class="text-sm  px-2 py-1 bg-[#1a1a1a] shadow-xl rounded-md flex items-center gap-2 
-                    hover:bg-[#2a2a2a] hover:scale-110 hover:cursor-pointer transition-all duration-300">
-                    MySQL
-                </span>
-
-            </div>
-        </h2>
-        </SectionContainer>
-        <SectionContainer id="experience">
-            <h2
-                class="text-white text-2xl font-bold mb-6 flex items-center gap-x-2"
-            >
-                <Briefcase class="size-6" />
-                Experiencia Laboral
-            </h2>
-            <Experience />
-        </SectionContainer>
-        <SectionContainer id="projects" class="pt-22">
-            <h2
-                class="text-white text-2xl font-bold mb-6 flex items-center gap-x-2"
-            >
-                <Code class="size-6" />
-                Proyectos
-            </h2>
-        </SectionContainer>
-        <SectionContainer class="pb-22">
-            <Projects />
-        </SectionContainer>
-    </main>
+      <nav class="flex gap-x-4 flex-wrap">
+        <SocialPill href="https://github.com/CollinsVieira">
+          <Github class="size-6" />
+          Github
+        </SocialPill>
+        <SocialPill href="https://www.linkedin.com/in/collinsvieira/">
+          <LinkedIn class="size-6" />
+          LinkedIn
+        </SocialPill>
+      </nav>
+    </SectionContainer>
+    <SectionContainer>
+      <Tecnologias client:load />
+    </SectionContainer>
+  </main>
+  <SectionContainer id="experience">
+    <h2 class="text-white text-2xl font-bold mb-6 flex items-center gap-x-2">
+      <Briefcase class="size-6" />
+      Experiencia Laboral
+    </h2>
+    <Experience />
+  </SectionContainer>
+  <SectionContainer id="projects" class="pt-22">
+    <h2 class="text-white text-2xl font-bold mb-6 flex items-center gap-x-2">
+      <Code class="size-6" />
+      Proyectos
+    </h2>
+  </SectionContainer>
+  <SectionContainer class="pb-22">
+    <Projects />
+  </SectionContainer>
 </Layout>
+
+<script>
+  import { gsap } from "gsap";
+</script>
