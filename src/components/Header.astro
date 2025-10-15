@@ -3,20 +3,21 @@ import srcImage from "../assets/foto.webp"
 import { Image } from "astro:assets";
 ---
 
+<!-- Header Desktop -->
 <header 
 id="header"
-class="px-4 rounded-full flex justify-between 
+class="px-4 rounded-full hidden md:flex justify-between 
 items-center xl:w-[1120px] py-2 mx-auto w-full my-4 sticky top-0 z-50
 backdrop-blur-sm transition-all duration-300"
 >
     <Image
         src={srcImage} 
         alt="logo" 
-        class="w-10 h-10 rounded-full hidden sm:block"
+        class="w-10 h-10 rounded-full"
         id="logo" 
     />
 
-    <nav class="flex gap-x-10 opacity-80 flex-wrap" id="nav">
+    <nav class="flex gap-x-10 opacity-80" id="nav">
         <a href="#home" class="hover:bg-[#171717] px-4 py-2 rounded-full transition-all duration-300">Inicio</a>
         <a href="#experience" class="hover:bg-[#171717] px-4 py-2 rounded-full transition-all duration-300">Experiencia</a>
         <a href="#projects" class="hover:bg-[#171717] px-4 py-2 rounded-full transition-all duration-300">Proyectos</a>
@@ -24,30 +25,318 @@ backdrop-blur-sm transition-all duration-300"
     </nav>
 </header>
 
+<!-- Mobile Floating Dock -->
+<div class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-50" id="mobile-dock">
+    <div class="floating-dock bg-gradient-to-r from-[#1a1a1a]/90 to-[#2a2a2a]/90 backdrop-blur-xl border border-white/10 rounded-full px-4 py-3 shadow-2xl shadow-purple-500/20">
+        <nav class="flex items-center gap-2" id="mobile-nav">
+            <a href="#home" class="nav-item group relative" data-tooltip="Inicio">
+                <div class="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 transition-all duration-300 hover:scale-110">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    </svg>
+                </div>
+                <span class="tooltip absolute -top-12 left-1/2 -translate-x-1/2 bg-white text-black px-3 py-1.5 rounded-lg text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
+                    Inicio
+                </span>
+            </a>
+            
+            <a href="#experience" class="nav-item group relative" data-tooltip="Experiencia">
+                <div class="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 transition-all duration-300 hover:scale-110">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                </div>
+                <span class="tooltip absolute -top-12 left-1/2 -translate-x-1/2 bg-white text-black px-3 py-1.5 rounded-lg text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
+                    Experiencia
+                </span>
+            </a>
+            
+            <a href="#projects" class="nav-item group relative" data-tooltip="Proyectos">
+                <div class="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 transition-all duration-300 hover:scale-110">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    </svg>
+                </div>
+                <span class="tooltip absolute -top-12 left-1/2 -translate-x-1/2 bg-white text-black px-3 py-1.5 rounded-lg text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
+                    Proyectos
+                </span>
+            </a>
+            
+            <a href="#contact" class="nav-item group relative" data-tooltip="Contacto">
+                <div class="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 transition-all duration-300 hover:scale-110">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                </div>
+                <span class="tooltip absolute -top-12 left-1/2 -translate-x-1/2 bg-white text-black px-3 py-1.5 rounded-lg text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
+                    Contacto
+                </span>
+            </a>
+        </nav>
+    </div>
+    
+    <!-- Active Indicator -->
+    <div class="active-indicator absolute top-1/2 -translate-y-1/2 left-0 w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 opacity-20 blur-xl transition-all duration-500 pointer-events-none"></div>
+</div>
+
+<!-- Mobile Top Bar (Logo) -->
+<div class="md:hidden fixed top-4 left-4 z-50" id="mobile-logo">
+    <Image
+        src={srcImage} 
+        alt="logo" 
+        class="w-12 h-12 rounded-full border-2 border-white/10 shadow-lg"
+    />
+</div>
+
+<style>
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-5px);
+        }
+    }
+
+    .floating-dock {
+        animation: float 3s ease-in-out infinite;
+    }
+
+    .nav-item {
+        position: relative;
+    }
+
+    .nav-item::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 9999px;
+        padding: 2px;
+        background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .nav-item:hover::before {
+        opacity: 1;
+    }
+</style>
+
 <script>
-
     import {gsap} from "gsap";
-    console.log(gsap.version);
-    
-    gsap.to('#logo', {
-        x: 100,
-        duration: 1.5,
-        ease: 'power4.inOut',
-    });
-    gsap.to('#nav', {
-        x: -100,
-        duration: 1.5,
-        ease: 'power4.inOut',
-    });
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+    gsap.registerPlugin(ScrollTrigger);
 
-    const header = document.getElementById('header');
-    
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header?.classList.add('bg-[#0d071e]/80');
+    document.addEventListener("DOMContentLoaded", () => {
+        const isMobile = window.innerWidth < 768;
+
+        if (!isMobile) {
+            // Animaciones Desktop
+            gsap.to('#logo', {
+                x: 100,
+                duration: 1.5,
+                ease: 'power4.inOut',
+            });
+            gsap.to('#nav', {
+                x: -100,
+                duration: 1.5,
+                ease: 'power4.inOut',
+            });
+
+            const header = document.getElementById('header');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header?.classList.add('bg-[#0d071e]/80');
+                } else {
+                    header?.classList.remove('bg-[#0d071e]/80');
+                }
+            });
         } else {
-            header?.classList.remove('bg-[#0d071e]/80');
+            // Animaciones Mobile
+            const mobileDock = document.getElementById('mobile-dock');
+            const mobileLogo = document.getElementById('mobile-logo');
+            const navItems = document.querySelectorAll('.nav-item');
+            const activeIndicator = document.querySelector('.active-indicator');
+
+            // Animación de entrada del dock
+            if (mobileDock) {
+                gsap.from(mobileDock, {
+                    y: 100,
+                    opacity: 0,
+                    duration: 1,
+                    ease: 'back.out(1.7)',
+                    delay: 0.5
+                });
+            }
+
+            // Animación del logo
+            if (mobileLogo) {
+                gsap.from(mobileLogo, {
+                    scale: 0,
+                    rotation: -180,
+                    opacity: 0,
+                    duration: 0.8,
+                    ease: 'back.out(1.7)',
+                    delay: 0.3
+                });
+
+                // Efecto de pulso en el logo al hacer scroll
+                let lastScroll = 0;
+                window.addEventListener('scroll', () => {
+                    const currentScroll = window.scrollY;
+                    if (Math.abs(currentScroll - lastScroll) > 100) {
+                        gsap.to(mobileLogo, {
+                            scale: 1.1,
+                            duration: 0.2,
+                            yoyo: true,
+                            repeat: 1,
+                            ease: 'power2.out'
+                        });
+                        lastScroll = currentScroll;
+                    }
+                });
+            }
+
+            // Animación de entrada escalonada de los items
+            navItems.forEach((item, index) => {
+                gsap.from(item, {
+                    scale: 0,
+                    opacity: 0,
+                    duration: 0.5,
+                    ease: 'back.out(2)',
+                    delay: 0.8 + (index * 0.1)
+                });
+
+                // Efecto de rebote al hacer click
+                item.addEventListener('click', (e) => {
+                    gsap.to(item, {
+                        scale: 0.85,
+                        duration: 0.1,
+                        yoyo: true,
+                        repeat: 1,
+                        ease: 'power2.inOut'
+                    });
+
+                    // Mover el indicador al item activo
+                    if (activeIndicator) {
+                        const itemRect = item.getBoundingClientRect();
+                        const dockRect = mobileDock?.getBoundingClientRect();
+                        
+                        if (dockRect) {
+                            const left = itemRect.left - dockRect.left;
+                            
+                            gsap.to(activeIndicator, {
+                                left: left,
+                                duration: 0.5,
+                                ease: 'power3.out'
+                            });
+                        }
+                    }
+                });
+
+                // Efecto de escala al hover/touch
+                item.addEventListener('touchstart', () => {
+                    gsap.to(item, {
+                        scale: 1.15,
+                        duration: 0.2,
+                        ease: 'power2.out'
+                    });
+                });
+
+                item.addEventListener('touchend', () => {
+                    gsap.to(item, {
+                        scale: 1,
+                        duration: 0.2,
+                        ease: 'power2.out'
+                    });
+                });
+            });
+
+            // Animación del dock al hacer scroll
+            let lastScrollY = 0;
+            let ticking = false;
+
+            window.addEventListener('scroll', () => {
+                lastScrollY = window.scrollY;
+
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        if (lastScrollY > 100) {
+                            gsap.to(mobileDock, {
+                                scale: 0.85,
+                                y: 10,
+                                duration: 0.3,
+                                ease: 'power2.out'
+                            });
+                        } else {
+                            gsap.to(mobileDock, {
+                                scale: 1,
+                                y: 0,
+                                duration: 0.3,
+                                ease: 'power2.out'
+                            });
+                        }
+                        ticking = false;
+                    });
+
+                    ticking = true;
+                }
+            });
+
+            // Detectar sección activa y animar el indicador
+            const sections = ['#home', '#experience', '#projects', '#contact'];
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = `#${entry.target.id}`;
+                        const index = sections.indexOf(id);
+                        
+                        if (index !== -1 && activeIndicator && navItems[index]) {
+                            const itemRect = navItems[index].getBoundingClientRect();
+                            const dockRect = mobileDock?.getBoundingClientRect();
+                            
+                            if (dockRect) {
+                                const left = itemRect.left - dockRect.left;
+                                
+                                gsap.to(activeIndicator, {
+                                    left: left,
+                                    opacity: 0.3,
+                                    scale: 1.2,
+                                    duration: 0.5,
+                                    ease: 'power3.out'
+                                });
+
+                                // Animar el item activo
+                                navItems.forEach(item => {
+                                    gsap.to(item.querySelector('div'), {
+                                        backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                                        duration: 0.3
+                                    });
+                                });
+
+                                gsap.to(navItems[index].querySelector('div'), {
+                                    backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                                    duration: 0.3
+                                });
+                            }
+                        }
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            // Observar todas las secciones
+            sections.forEach(selector => {
+                const element = document.querySelector(selector);
+                if (element) {
+                    observer.observe(element);
+                }
+            });
         }
     });
 </script>
