@@ -3,8 +3,8 @@ import ExperienceItem from "./ExperienceItem.astro";
 import Briefcase from "../icons/Briefcase.astro";
 const EXPERIENCE_ITEMS = [
     {
-        title: "Practicante del área de TI",
-        description: "Practicante del área de TI de la empresa IFCET.",
+        title: "Practicante en el área de TI",
+        description: "Practicante en el área de TI de la empresa IFCET.",
         date: "Desde 2022 hasta 2024",
     },
     {
@@ -20,7 +20,7 @@ const EXPERIENCE_ITEMS = [
     <Briefcase class="size-6" />
     Experiencia Laboral
   </h2>
-<ol class="items-center sm:flex lg:">
+<ol class="items-center sm:flex ">
     {EXPERIENCE_ITEMS.map((item) => (
         <li class="relative mb-6 sm:mb-0 text-pretty">
             <ExperienceItem {...item} />

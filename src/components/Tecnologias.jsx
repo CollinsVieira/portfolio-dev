@@ -19,7 +19,7 @@ const imageLogos = [
 
 function Tecnologias() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col text-white">
       <div style={{ height: '200px', position: 'relative', overflow: 'hidden'}}>
         <LogoLoop
           logos={techLogos}
@@ -30,7 +30,7 @@ function Tecnologias() {
           pauseOnHover
           scaleOnHover
           fadeOut
-          fadeOutColor=""
+          fadeOutColor="transparent"
           ariaLabel="Technology partners"
         />
       </div>

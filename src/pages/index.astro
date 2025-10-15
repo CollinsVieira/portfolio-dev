@@ -16,10 +16,11 @@ import Tecnologias from "../components/Tecnologias.jsx";
   title="Porfolio | Collins Vieira"
   description="Portfolio de Collins Vieira, desarrollador y programador fullstack con 2 años de experiencia. De Chiclayo, Perú."
 >
-  <main class="px-4">
-    <SectionContainer id="home" class="py-16 lg:py-44 pb-12 sm:pb-5">
+  <main class="px-4 relative z-10">
+    <SectionContainer id="home" class="py-16 lg:py-44 pb-12 sm:pb-5 text-white">
       <Shuffle
         text="Hola, soy Collins Vieira"
+        colorFrom="#00ffff"
         shuffleDirection="right"
         duration={0.35}
         animationMode="evenodd"
@@ -44,8 +45,7 @@ import Tecnologias from "../components/Tecnologias.jsx";
       <div class="flex items-center pt-4">
         <Badge>Open to work!</Badge>
       </div>
-
-      <nav class="flex gap-x-4 flex-wrap">
+      <nav class="flex gap-x-4 flex-wrap mt-4">
         <SocialPill href="https://github.com/CollinsVieira">
           <Github class="size-6" />
           Github
