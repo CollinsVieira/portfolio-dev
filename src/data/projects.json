@@ -1,0 +1,71 @@
+[
+    {
+        "title": "IFCET - Sistema de Gestión de Estudiantes",
+        "description": "Proyecto para la gestión de estudiantes de la empresa IFCET. Módulos de Registros, Reportes, Usuarios, etc.",
+        "link": "#",
+        "image": "assetsifcet-aula.webp",
+        "github": "",
+        "tags": [
+            "React",
+            "Django",
+            "PostGreSQL"
+        ]
+    },
+    {
+        "title": "IFCET - Sitio Web",
+        "description": "Sitio web de la empresa IFCET. Aumentó las ventas en un 20% en su totalidad.",
+        "link": "#",
+        "image": "assets/ifcet-web.webp",
+        "github": "",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "WordPress"
+        ]
+    },
+    {
+        "title": "IFCET - Aula Virtual",
+        "description": "Aula Virtual para los estudiantes de IFCET.",
+        "link": "#",
+        "image": "assets/ifcet-web2.webp",
+        "github": "",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "PHP",
+            "MySQL"
+        ]
+    },
+    {
+        "title": "IFCET - Sitio web",
+        "description": "Migración del sitio web de IFCET nuevas tecnologías con Astro, React y Django como backend.",
+        "link": "https://ifcet.com.pe/",
+        "image": "assets/ifcet-web2.webp",
+        "github": "",
+        "tags": [
+            "React",
+            "Astro",
+            "Tailwind CSS",
+            "TypeScript",
+            "Django",
+            "PostGreSQL"
+        ]
+    },
+    {
+        "title": "Serfer & Asociados - Sistema personalizado para Control y Venta de Lotes e Imobiliaria",
+        "description": "Sistema para Control y Venta de Lotes e Imobiliaria personalizado para la empresa Serfer & Asociados.",
+        "link": "",
+        "image": "assets/serfer_project.webp",
+        "github": "",
+        "tags": [
+            "React",
+            "Tailwind CSS",
+            "TypeScript",
+            "Django",
+            "PostGreSQL",
+            "Docker"
+        ]
+    }
+]

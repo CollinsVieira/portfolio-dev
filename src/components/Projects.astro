@@ -12,55 +12,74 @@ import AstroIcon from "../icons/AstroIcon.astro";
 import TailwindCss from "../icons/TailwindCss.astro";
 import TypeScript from "../icons/TypeScript.astro";
 import Docker from "../icons/docker.astro";
-import srcImage from "../assets/ifcet.webp"
-import srcImage2 from "../assets/ifcet-aula.webp"
-import srcImage3 from "../assets/ifcet-web.webp"
-import srcImage4 from "../assets/ifcet-web2.webp"
-import srcImage5 from "../assets/serfer_project.webp"
+import srcImage from "../assets/ifcet.webp";
+import srcImage2 from "../assets/ifcet-aula.webp";
+import srcImage3 from "../assets/ifcet-web.webp";
+import srcImage4 from "../assets/ifcet-web2.webp";
+import srcImage5 from "../assets/serfer_project.webp";
 import { Image } from "astro:assets";
+import projects2 from "../data/projects.json";
 
 const PROJECTS = [
-    {
-        title: "IFCET - Sistema de Gestión de Estudiantes",
-        description:
-            "Proyecto para la gestión de estudiantes de la empresa IFCET. Módulos de Registros, Reportes, Usuarios, etc.",
-        link: "#",
-        image: srcImage,
-        github: "",
-        tags: ["React", "Django", "PostGreSQL"],
-    },
-    {
-        title: "IFCET - Sitio Web",
-        description: "Sitio web de la empresa IFCET. Aumentó las ventas en un 20% en su totalidad.",
-        link: "#",
-        image: srcImage2,
-        github: "",
-        tags: ["HTML", "CSS", "JavaScript", "WordPress"],
-    },
-    {
-        title: "IFCET - Aula Virtual",
-        description: "Aula Virtual para los estudiantes de IFCET.",
-        link: "#",
-        image: srcImage3,
-        github: "",
-        tags: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
-    },
-    {
-        title: "IFCET - Sitio web",
-        description: "Migración del sitio web de IFCET nuevas tecnologías con Astro, React y Django como backend.",
-        link: "https://ifcet.com.pe/",
-        image: srcImage4,
-        github: "",
-        tags: ["React", "Astro", "Tailwind CSS","TypeScript","Django","PostGreSQL"],
-    },
-    {
-        title: "Serfer & Asociados - Sistema personalizado para Control y Venta de Lotes e Imobiliaria",
-        description: "Sistema para Control y Venta de Lotes e Imobiliaria personalizado para la empresa Serfer & Asociados.",
-        link: "",
-        image: srcImage5,
-        github: "",
-        tags: ["React", "Tailwind CSS","TypeScript","Django","PostGreSQL","Docker"],
-    }
+  {
+    title: "IFCET - Sistema de Gestión de Estudiantes",
+    description:
+      "Proyecto para la gestión de estudiantes de la empresa IFCET. Módulos de Registros, Reportes, Usuarios, etc.",
+    link: "#",
+    image: srcImage,
+    github: "",
+    tags: ["React", "Django", "PostGreSQL"],
+  },
+  {
+    title: "IFCET - Sitio Web",
+    description:
+      "Sitio web de la empresa IFCET. Aumentó las ventas en un 20% en su totalidad.",
+    link: "#",
+    image: srcImage2,
+    github: "",
+    tags: ["HTML", "CSS", "JavaScript", "WordPress"],
+  },
+  {
+    title: "IFCET - Aula Virtual",
+    description: "Aula Virtual para los estudiantes de IFCET.",
+    link: "#",
+    image: srcImage3,
+    github: "",
+    tags: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
+  },
+  {
+    title: "IFCET - Sitio web",
+    description:
+      "Migración del sitio web de IFCET nuevas tecnologías con Astro, React y Django como backend.",
+    link: "https://ifcet.com.pe/",
+    image: srcImage4,
+    github: "",
+    tags: [
+      "React",
+      "Astro",
+      "Tailwind CSS",
+      "TypeScript",
+      "Django",
+      "PostGreSQL",
+    ],
+  },
+  {
+    title:
+      "Serfer & Asociados - Sistema personalizado para Control y Venta de Lotes e Imobiliaria",
+    description:
+      "Sistema para Control y Venta de Lotes e Imobiliaria personalizado para la empresa Serfer & Asociados.",
+    link: "",
+    image: srcImage5,
+    github: "",
+    tags: [
+      "React",
+      "Tailwind CSS",
+      "TypeScript",
+      "Django",
+      "PostGreSQL",
+      "Docker",
+    ],
+  },
 ];
 
 const ICONS = {
@@ -80,245 +99,64 @@ const ICONS = {
 };
 ---
 
-<div class="horizontal-scroll-wrapper overflow-hidden">
-  <div class="scroll-indicator text-center mb-8">
-    <p class="text-gray-400 text-sm animate-pulse">Desliza para ver más proyectos →</p>
-  </div>
-  
-  <div class="horizontal-scroll-container" id="projects-container">
-    <div class="projects-track flex gap-8" id="projects-track">
-      {PROJECTS.map((project, index) => (
-        <article 
-          class="project-card flex-shrink-0 w-[85vw] md:w-[600px] lg:w-[700px] group"
-          data-index={index}
-        >
-          <div class="card-inner bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] rounded-2xl overflow-hidden border border-gray-800 hover:border-gray-600 transition-all duration-500 shadow-2xl min-h-[750px] md:min-h-[800px] flex flex-col">
-            <div class="image-container relative overflow-hidden h-[300px] md:h-[400px]">
-              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10 opacity-60"></div>
-              <Image 
-                src={project.image} 
-                alt={project.title} 
-                class="w-full h-full object-cover object-top transform group-hover:scale-110 transition-transform duration-700 ease-out"
-              />
-              <div class="absolute top-4 right-4 z-20">
-                <span class="bg-white/10 backdrop-blur-md px-4 py-2 rounded-full text-white text-sm font-semibold border border-white/20">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-              </div>
-            </div>
-            
-            <div class="content-container p-6 md:p-8 flex-1 flex flex-col justify-between">
-              <div>
-                <h3 class="text-white text-xl md:text-2xl font-bold mb-3 leading-tight group-hover:text-blue-400 transition-colors duration-300">
-                  {project.title}
-                </h3>
-                
-                <p class="text-gray-300 text-sm md:text-base mb-6 leading-relaxed">
-                  {project.description}
-                </p>
-                
-                <div class="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => {
-                    const Icon = ICONS[tag as keyof typeof ICONS];
-                    return (
-                      <span class="tech-tag text-xs md:text-sm px-3 py-2 bg-white/5 backdrop-blur-sm rounded-lg flex items-center gap-2 border border-white/10 hover:bg-white/10 hover:border-white/20 hover:scale-105 transition-all duration-300 cursor-pointer">
-                        {Icon ? <Icon class="size-5 md:size-6" /> : null}
-                        <span class="text-gray-200">{tag}</span>
-                      </span>
-                    );
-                  })}
-                </div>
-              </div>
-              
-              {project.link && project.link !== "#" && (
-                <div class="mt-6">
-                  <a 
-                    href={project.link} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    class="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50"
-                  >
-                    Ver Proyecto →
-                  </a>
-                </div>
-              )}
+{
+  PROJECTS.map((project, index) => (
+    <article
+      class="flex-shrink-0 md:w-[600px] lg:w-[900px] group"
+      data-index={index}
+    >
+      <div class="bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] rounded-2xl overflow-hidden border border-gray-800 hover:border-gray-600 transition-all duration-500 shadow-2xl min-h-[350px] flex mb-16">
+        <div class="relative overflow-hidden h-[300px] md:h-[400px]">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10 opacity-60" />
+          <Image
+            src={project.image}
+            alt={project.title}
+            class="w-full h-full object-cover object-top transform group-hover:scale-110 transition-transform duration-700 ease-out"
+          />
+          <div class="absolute top-4 right-4 z-20">
+            <span class="bg-white/10 backdrop-blur-md px-4 py-2 rounded-full text-white text-sm font-semibold border border-white/20">
+              {String(index + 1).padStart(2, "0")}
+            </span>
+          </div>
+        </div>
+
+        <div class="content-container p-6 md:p-8 flex-1 flex flex-col justify-between">
+          <div>
+            <h3 class="text-white text-xl md:text-2xl font-bold mb-3 leading-tight group-hover:text-blue-400 transition-colors duration-300">
+              {project.title}
+            </h3>
+
+            <p class="text-gray-300 text-sm md:text-base mb-6 leading-relaxed">
+              {project.description}
+            </p>
+
+            <div class="flex flex-wrap gap-2">
+              {project.tags.map((tag) => {
+                const Icon = ICONS[tag as keyof typeof ICONS];
+                return (
+                  <span class="tech-tag text-xs md:text-sm px-3 py-2 bg-white/5 backdrop-blur-sm rounded-lg flex items-center gap-2 border border-white/10 hover:bg-white/10 hover:border-white/20 hover:scale-105 transition-all duration-300 cursor-pointer">
+                    {Icon ? <Icon class="size-5 md:size-6" /> : null}
+                    <span class="text-gray-200">{tag}</span>
+                  </span>
+                );
+              })}
             </div>
           </div>
-        </article>
-      ))}
-    </div>
-  </div>
-  
-  <div class="scroll-progress mt-8">
-    <div class="h-1 bg-gray-800 rounded-full overflow-hidden">
-      <div id="progress-bar" class="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transition-all duration-300"></div>
-    </div>
-  </div>
-</div>
 
-<style>
-  .horizontal-scroll-wrapper {
-    position: relative;
-    width: 100%;
-  }
-
-  .horizontal-scroll-container {
-    position: relative;
-    width: 100%;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-
-  .horizontal-scroll-container::-webkit-scrollbar {
-    display: none;
-  }
-
-  .projects-track {
-    will-change: transform;
-    padding: 20px 0;
-  }
-
-  .project-card {
-    opacity: 0.7;
-    transform: scale(0.95);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-  }
-
-  .project-card.active {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  @media (max-width: 768px) {
-    .project-card {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-</style>
-
-<script>
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const container = document.getElementById("projects-container");
-    const track = document.getElementById("projects-track");
-    const progressBar = document.getElementById("progress-bar");
-    const cards = document.querySelectorAll(".project-card");
-
-    if (!container || !track || !progressBar) return;
-
-    // Calcular el ancho total del scroll horizontal
-    const scrollWidth = track.scrollWidth - container.clientWidth;
-
-    // Animación principal de scroll horizontal
-    const horizontalScroll = gsap.to(track, {
-      x: () => -scrollWidth,
-      ease: "none",
-      scrollTrigger: {
-        trigger: container,
-        start: "top 20%",
-        end: () => `+=${scrollWidth * 1.5}`,
-        scrub: 1,
-        pin: true,
-        anticipatePin: 1,
-        invalidateOnRefresh: true,
-      }
-    });
-
-    // Animación de la barra de progreso
-    gsap.to(progressBar, {
-      width: "100%",
-      ease: "none",
-      scrollTrigger: {
-        trigger: container,
-        start: "top 20%",
-        end: () => `+=${scrollWidth * 1.5}`,
-        scrub: 1,
-      }
-    });
-
-    // Animaciones individuales para cada tarjeta
-    cards.forEach((card, index) => {
-      // Animación de entrada
-      gsap.from(card, {
-        opacity: 0,
-        y: 100,
-        rotation: 5,
-        scrollTrigger: {
-          trigger: container,
-          start: "top 50%",
-          end: "top 20%",
-          scrub: 1,
-          onUpdate: (self) => {
-            const progress = self.progress;
-            const cardProgress = Math.max(0, Math.min(1, (progress - index * 0.15) * 2));
-            gsap.to(card, {
-              opacity: cardProgress,
-              y: (1 - cardProgress) * 100,
-              rotation: (1 - cardProgress) * 5,
-              duration: 0.3
-            });
-          }
-        }
-      });
-
-      // Efecto parallax en la imagen
-      const image = card.querySelector(".image-container img");
-      if (image) {
-        gsap.to(image, {
-          x: -50,
-          scrollTrigger: {
-            trigger: card,
-            containerAnimation: horizontalScroll,
-            start: "left right",
-            end: "right left",
-            scrub: 1,
-          }
-        });
-      }
-
-      // Resaltar tarjeta activa
-      ScrollTrigger.create({
-        trigger: card,
-        containerAnimation: horizontalScroll,
-        start: "left center",
-        end: "right center",
-        onToggle: (self) => {
-          if (self.isActive) {
-            card.classList.add("active");
-          } else {
-            card.classList.remove("active");
-          }
-        }
-      });
-    });
-
-    // Animación del indicador de scroll
-    const scrollIndicator = document.querySelector(".scroll-indicator");
-    if (scrollIndicator) {
-      ScrollTrigger.create({
-        trigger: container,
-        start: "top 50%",
-        end: "top 20%",
-        onUpdate: (self) => {
-          gsap.to(scrollIndicator, {
-            opacity: 1 - self.progress,
-            y: self.progress * -20,
-            duration: 0.3
-          });
-        }
-      });
-    }
-
-    // Actualizar al redimensionar
-    window.addEventListener("resize", () => {
-      ScrollTrigger.refresh();
-    });
-  });
-</script>
+          {project.link && project.link !== "#" && (
+            <div class="mt-6">
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50"
+              >
+                Ver Proyecto →
+              </a>
+            </div>
+          )}
+        </div>
+      </div>
+    </article>
+  ))
+}

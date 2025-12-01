@@ -19,7 +19,7 @@ import Tecnologias from "../components/Tecnologias.jsx";
   <main class="px-4 relative z-10">
     <SectionContainer id="home" class="py-16 lg:py-44 pb-12 sm:pb-5 text-white">
       <Shuffle
-        text="Hola, soy Collins Vieira"
+        text="Hola, soy "
         colorFrom="#00ffff"
         shuffleDirection="right"
         duration={0.35}
@@ -32,13 +32,31 @@ import Tecnologias from "../components/Tecnologias.jsx";
         triggerOnHover={true}
         respectReducedMotion={true}
         onShuffleComplete={undefined}
-        colorFrom={undefined}
-        colorTo={undefined}
+        colorFrom="#dca600"
+        colorTo="#FFF"
+        client:load
+      />
+      <Shuffle
+        text="Collins Vieira"
+        colorFrom="#00ffff"
+        shuffleDirection="right"
+        duration={0.35}
+        animationMode="evenodd"
+        shuffleTimes={1}
+        ease="power3.out"
+        stagger={0.03}
+        threshold={0.1}
+        triggerOnce={true}
+        triggerOnHover={true}
+        respectReducedMotion={true}
+        onShuffleComplete={undefined}
+        colorFrom="#FFF"
+        colorTo="#dca600"
         client:load
       />
       <h2 class="text-white text-base lg:text-xl text-pretty" id="description">
-        Ingeniero de Sistemas especializado en desarrollo web Full Stack con 2
-        años de experiencia diseñando, desarrollando e implementando soluciones
+        Ingeniero de Sistemas especializado en desarrollo web Full Stack con 1
+        año de experiencia diseñando, desarrollando e implementando soluciones
         escalables y eficientes.
       </h2>
       <h2 class="text-white text-sm lg:text-[14px]">De Chiclayo, Perú.</h2>
