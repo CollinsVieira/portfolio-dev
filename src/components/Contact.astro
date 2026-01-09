@@ -1,0 +1,120 @@
+---
+import Email from "../icons/Email.astro";
+import Phone from "../icons/Phone.astro";
+import Github from "../icons/Github.astro";
+import LinkedIn from "../icons/LinkedIn.astro";
+import Instagram from "../icons/Instagram.astro";
+
+const contactInfo = [
+  {
+    icon: Phone,
+    label: "Teléfono",
+    value: "+51 971254627",
+    href: "tel:+51971254627",
+  },
+  {
+    icon: Email,
+    label: "Email",
+    value: "polarqueen508@gmail.com",
+    href: "mailto:polarqueen508@gmail.com",
+  },
+];
+---
+
+<div class="w-full max-w-4xl mx-auto">
+  <h2 class="text-white text-3xl md:text-4xl font-bold mb-8 text-center">
+    <span class="bg-white bg-clip-text text-transparent"> Contáctame </span>
+  </h2>
+
+  <p class="text-gray-300 text-center mb-12 text-lg">
+    ¿Tienes un proyecto en mente? ¡Hablemos! Estoy disponible para nuevas
+    oportunidades.
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {
+      contactInfo.map((contact) => {
+        const Icon = contact.icon;
+        return (
+          <a
+            href={contact.href}
+            target={contact.href.startsWith("http") ? "_blank" : undefined}
+            rel={
+              contact.href.startsWith("http")
+                ? "noopener noreferrer"
+                : undefined
+            }
+            class="group bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] rounded-xl p-6 border border-gray-800 hover:border-blue-500/50 transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/20"
+          >
+            <div class="flex items-start gap-4">
+              <div class="bg-black p-3 rounded-lg group-hover:scale-110 transition-transform duration-300">
+                <Icon class="size-6 text-black" />
+              </div>
+
+              <div class="flex-1">
+                <h3 class="text-white font-semibold text-lg mb-1 group-hover:text-blue-400 transition-colors duration-300">
+                  {contact.label}
+                </h3>
+                <p class="text-white text-sm break-all group-hover:text-gray-300 transition-colors duration-300">
+                  {contact.value}
+                </p>
+              </div>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="size-5 text-gray-600 group-hover:text-blue-400 group-hover:translate-x-1 transition-all duration-300"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </div>
+          </a>
+        );
+      })
+    }
+  </div>
+
+  <div class="mt-12 text-center">
+    <div
+      class="inline-block bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] rounded-xl p-8 border border-gray-800"
+    >
+      <p class="text-gray-300 mb-4">También puedes encontrarme en</p>
+      <div class="flex justify-center gap-4">
+        <a
+          href="https://github.com/CollinsVieira"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-white/10 hover:bg-white/20 p-3 rounded-full border border-white/10 hover:border-white/30 transition-all duration-300 hover:scale-110"
+          aria-label="GitHub"
+        >
+          <Github class="size-6 text-white" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/collinsvieira/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-white/10 hover:bg-white/20 p-3 rounded-full border border-white/10 hover:border-white/30 transition-all duration-300 hover:scale-110"
+          aria-label="LinkedIn"
+        >
+          <LinkedIn class="size-6 text-white" />
+        </a>
+        <a
+          href="https://www.instagram.com/collins_ll/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-white/10 hover:bg-white/20 p-3 rounded-full border border-white/10 hover:border-white/30 transition-all duration-300 hover:scale-110"
+          aria-label="Instagram"
+        >
+          <Instagram class="size-6 text-white" />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

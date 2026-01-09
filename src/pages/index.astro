@@ -10,6 +10,7 @@ import Code from "../icons/Code.astro";
 import Projects from "../components/Projects.astro";
 import Shuffle from "../utils/Shuffle.jsx";
 import Tecnologias from "../components/Tecnologias.jsx";
+import Contact from "../components/Contact.astro";
 ---
 
 <Layout
@@ -55,9 +56,9 @@ import Tecnologias from "../components/Tecnologias.jsx";
         client:load
       />
       <h2 class="text-white text-base lg:text-xl text-pretty" id="description">
-        Ingeniero de Sistemas especializado en desarrollo web Full Stack con 1
-        año de experiencia diseñando, desarrollando e implementando soluciones
-        escalables y eficientes.
+        Ingeniero de Sistemas especializado en desarrollo web Full Stack,
+        orientado al diseño, desarrollo e implementación de soluciones web
+        escalables y eficientes que harán que tus proyectos sean exitosos.
       </h2>
       <h2 class="text-white text-sm lg:text-[14px]">De Chiclayo, Perú.</h2>
       <div class="flex items-center pt-4">
@@ -89,6 +90,9 @@ import Tecnologias from "../components/Tecnologias.jsx";
   </SectionContainer>
   <SectionContainer class="pb-22">
     <Projects />
+  </SectionContainer>
+  <SectionContainer id="contact" class="py-22">
+    <Contact />
   </SectionContainer>
 </Layout>
 
